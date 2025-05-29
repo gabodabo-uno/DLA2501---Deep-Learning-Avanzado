@@ -1,0 +1,129 @@
+\documentclass[10pt]{beamer}
+\usetheme{CambridgeUS}
+\usepackage[utf8]{inputenc}
+%\usepackage[spanish]{babel}
+\usepackage{amsmath}
+\usepackage{threeparttable} 
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{natbib}
+\usepackage{mathtools}
+
+\DeclareMathOperator*{\argmax}{arg\,max}
+
+\usepackage{listings} %Para poner Py code 
+% https://es.overleaf.com/learn/latex/Code_listing
+
+\usepackage{xcolor} 
+\usepackage{listings} 
+\usepackage{setspace} 
+
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+
+\definecolor{NormalText}{HTML}{FFFFFF} 
+\definecolor{Coment}{HTML}{999999} 
+\definecolor{String}{HTML}{0DC042} 
+\definecolor{Number}{HTML}{FAED5C} 
+\definecolor{Keyword}{HTML}{C670E0} 
+\definecolor{Builtin}{HTML}{FAB16C} 
+\definecolor{Definition}{HTML}{57D6E4} 
+\definecolor{Instance}{HTML}{EE6772} 
+ 
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{Coment},
+    keywordstyle=\color{Keyword},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{String},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2
+}
+
+\lstset{style=mystyle}
+
+
+%###############
+%Estos dos van juntos para crear un símbolo
+\usepackage{amsmath,amssymb}
+\DeclareMathOperator{\E}{\mathbb{E}}
+\DeclareMathOperator*{\argmin}{arg\,min}
+%###############
+
+\usepackage{hyperref} %Para correos y urls
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=cyan,
+    pdftitle={Overleaf Example},
+    pdfpagemode=FullScreen,
+    }
+
+\title[Midterm Exam: DLA2501]{Midterm Exam: Advanced Deep Learning}
+\author{Gabriel Santiago Belevan}
+%\institute[RIEF]{The Research Institute in Economics and Finance}
+%\titlegraphic{
+%\includegraphics[width=2cm]{Logo.jpg}
+%}
+
+\begin{document}
+
+\begin{frame}
+\titlepage
+\end{frame}
+
+\begin{frame}{Problematic}
+Perú es una economía emergente con un crecimiento sostenido en los últimos años. Sin embargo, no ha sido ajeno a los efectos del cambio climático:\\
+\vspace{0.5cm}
+\textbf{Efectos del Fenómeno de El Niño en la economía peruana.}
+\begin{itemize}
+    \item PBI $\downarrow 1.5\%$ estimado  (\href{https://acortar.link/KPBUJg}{EY, 2023})
+    \item +245K familias afectadas (\href{https://acortar.link/TkdufF}{ONU, 2023})
+\end{itemize}
+
+\vspace{0.5cm}
+\textbf{Propuesta de valor:}
+Construcción de modelo de predicción de huaicos en el Perú.
+
+\end{frame}
+
+\begin{frame}{Data}
+En cuanto a información por utilizar, seguimos al Ministerio de Agro y Riego del Perú (\href{https://acortar.link/PQVWFQ}{MIDAGRI})
+
+La información proveendrá de la base de datos de World Bank Database: \href{https://climateknowledgeportal.worldbank.org/country/peru/climate-data-historical}{climateknowledgeportal.worldbank}. Gridded time-series dataset que contiene: 
+\begin{itemize}
+    \item Temperatura del aire y del oceano
+    \item Precipitaciones
+    \item Viento
+\end{itemize}
+\vspace{0.5cm}
+
+\textbf{Retos de la }\textcolor{red}{\textbf{data}} \textbf{y} \textcolor{blue}{\textbf{metodología}}: 
+\begin{itemize}
+    \item \textcolor{red}{Formato de información desconocido}
+    \item\textcolor{red}{¿Estmos seguros que la información es legible con software libre?}
+    \item \textcolor{blue}{¿Cómo juntamos diferntes tipos de datasets como series de tiempo, imagenes, features ad-hoc de regiones (e.g., contaminación, número de ciudades, tipo de terreno, etc.)? Si fuese el caso de tratar de predecir cancer: usar imagenes e historial clínico.}
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}{Hypothesis}
+    Nuestra hipotesis es que el fenómeno del Niño y las regiones afectadas por los huaicos son procesos modelables por medio de redes neuronlaes convolucionales y LSTM.
+    \begin{itemize}
+        \item Convolucionales: Las precipitaciones en el cuadrante $i$ afectan no solo a dicho cuadrante.
+        \item LSTM: Las precipitaciones tienen una componente tendencial de serie de tiempo que puede ser modelada con este tipo de capas.
+    \end{itemize}
+\end{frame}
+
+
+\end{document}

@@ -1,0 +1,54 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{graphicx}
+\usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry}
+\usepackage{authblk} % Para el formato de los autores
+%\usepackage{apacitet} %Creo que puedo omitir esta linea
+\usepackage{natbib}
+%\usepackage[natbibapa]{apacite}
+\usepackage{mathtools} %Para poder poner dos ecuaciones lado a lado
+\usepackage{float}
+%\usepackage{dirtytalk}
+%\usepackage{amsmath} %Para poder dividir en dos lineas las ecuaciones
+\usepackage{threeparttable}
+\usepackage{xcolor} %Para colores en el texto
+%\DeclareMathOperator*{\E}{\mathbb{E}} %Tengo que tener el paquete amsmath
+\usepackage{booktabs} % Para que pueda usar los comandos que salen con el output de Python 
+\usepackage{longtable} %Para usar longtable si es que en  Python se
+
+
+\usepackage{neuralnetwork}
+
+%###############
+%Estos dos van juntos para crear un símbolo
+\usepackage{amsmath,amssymb}
+\DeclareMathOperator{\E}{\mathbb{E}}
+%###############
+
+\title{Midterm Exam: Advanced Deep Learning}
+\author[1]{Gabriel Santiago Belevan}
+%\affil[1]{Facultad de Economía UPC \\email: u201713734@upc.edu.pe}
+
+\date{\today}
+
+
+\begin{document}
+\maketitle
+
+    \begin{neuralnetwork}[height=4]
+        \newcommand{\x}[2]{$x_#2$}
+        \newcommand{\y}[2]{$\hat{y}_#2$}
+        \newcommand{\hfirst}[2]{\small $h^{(1)}_#2$}
+        \newcommand{\hsecond}[2]{\small $h^{(2)}_#2$}
+        \inputlayer[count=3, bias=true, title=Input\\layer, text=\x]
+        \hiddenlayer[count=4, bias=false, title=Hidden\\layer 1, text=\hfirst] \linklayers
+        \hiddenlayer[count=3, bias=false, title=Hidden\\layer 2, text=\hsecond] \linklayers
+        \outputlayer[count=2, title=Output\\layer, text=\y] \linklayers
+    \end{neuralnetwork}
+
+
+
+
+
+\end{document}

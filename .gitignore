@@ -1,0 +1,25 @@
+# Todos los files que sean realcionados a la literatura del curso
+Lit/
+# Todos los files de datos usados para el Examen 02
+1. Documentos Recibidos/
+2. Datos/
+4. Analisis/
+# Todos los files que sean relacionados a un LaTeX file
+*.aux
+*.fdb_latexmk
+*.fls
+*.log
+*.nav
+*.out
+*.snm
+*.gz
+*.zip
+# Ignoramos files pesados
+DeepLearning_Bourbaki-main.zip
+# Ignora el entorno usado 
+.venv/
+.vscode/
+# Ignoramos proyectos y carpetas no deseadas
+01 Redes neuronales densas y auto-encoders/
+01 Reto/
+GSB_MOD_DeepLearning_Bourbaki/
