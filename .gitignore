@@ -23,3 +23,6 @@ DeepLearning_Bourbaki-main.zip
 01 Redes neuronales densas y auto-encoders/
 01 Reto/
 GSB_MOD_DeepLearning_Bourbaki/
+
+# Dentro de flood Forecasting ignoramos los siguientes files
+Sobre los datos.pptx
