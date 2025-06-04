@@ -28,3 +28,6 @@ GSB_DeepLearning_Bourbaki-main_v202505/
 
 # Dentro de flood Forecasting ignoramos los siguientes files
 Sobre los datos.pptx
+
+# Ignoramos mis utils
+utils.py
