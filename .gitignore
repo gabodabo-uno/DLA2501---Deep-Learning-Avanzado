@@ -31,3 +31,4 @@ Sobre los datos.pptx
 
 # Ignoramos mis utils
 utils.py
+__pycache__
